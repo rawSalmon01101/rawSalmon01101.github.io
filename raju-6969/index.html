@@ -8,6 +8,8 @@
             <div class="scroll-container" id="wrapper2">Gng jngr</div>
         </div>
 
+        <br>
+
         <div class="option-wrapper">
         <p id="Heading">Select your preference</p>
             <div class="radio-options">
@@ -19,9 +21,12 @@
             <div class="radio-options">
                 <input type="checkbox" value="opt"><label for="opt"> L Large 6969</label>
             </div>
-            <div class="Button">
-                <input type="Button" value="Proceed to checkout">
-            </div>
+        </div>
+
+        <div class="option-wrapper">
+            <p id="Heading">Customise your order</p>
+            <textarea class="customise"> </textarea>
+            <input type="Button" value="Proceed to checkout" class="button">
         </div>
     </body>
     <style>
@@ -36,7 +41,7 @@
             height: 50px;
             display: flex;
             align-items: center;
-            border-radius: 8px;
+            border-radius: 4px;
             overflow: hidden;
         }
         #wrapper2 {
@@ -49,16 +54,45 @@
         }
 
         .option-wrapper {
+            animation: 300ms cubic-bezier(0, 0.89, 0.62, 1.2) loadIn;
             background-color: #333333;
             border-radius: 8px;
             display: flex;
             flex-direction: column;
             gap: 8px;
-            padding: 10px;
+            padding: 16px;
+            padding-bottom: 18px;
+            overflow: hidden;
         }
 
-        .Button {
+        .button {
+            margin-top: 10px;
+            padding: 12px;
+            border: 0px solid black;
+            border-radius: 30px;
+            background-color: rgb(0, 185, 124);
+            transition: all 200ms cubic-bezier(0.23, 1, 0.320, 1);
+        }
+        .button:focus {
+            transform: scale(0.96);
+            transition: all 200ms cubic-bezier(0.23, 1, 0.320, 1);
+        }
 
+        .customise {
+            height: 150px;
+            background-color: #555555;
+            border: 0px solid black;
+            border-radius: 8px;
+            padding: 8px;
+            color: #ffffff;
+            font-size: 16px;
+            font-family: Arial;
+            transition: all 200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .customise:focus {
+            outline: none;
+            background-color: #777777;
+            transition: all 200ms cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
         @keyframes marquee {
@@ -70,6 +104,16 @@
             }
             100% {
             transform: translateX(100vw);
+            }
+        }
+        @keyframes loadIn {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0px);
+                opacity: 1;
             }
         }
 
