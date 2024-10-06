@@ -1,7 +1,7 @@
 <!DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Order Diamond Biscuit</title>
-    <body>
+    <body bgcolor: #000000>
         <div id="all-wrapper">
             <div class="title-wrapper">
                 Store
@@ -83,6 +83,7 @@
 
         @keyframes containerFadeIn {
             0% {
+                transform: translateX(-90px);
                 height: 30px;
                 width: 80px;
                 border-radius: 30px;
@@ -94,6 +95,7 @@
             }
             60% {
                 border-radius: 30px;
+                transform: translateX(0px);
             }
             100% {
                 width: calc(100vw - 13px);
