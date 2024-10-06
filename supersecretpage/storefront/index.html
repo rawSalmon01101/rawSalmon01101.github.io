@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Order Diamond Biscuit</title>
+    <body>
+        <div id="all-wrapper">
+            <div class="title-wrapper">
+                Store
+            </div>
+            <div class="store-content-wrapper">
+                <div class="Titles">
+                    Buy an item
+                </div>
+                <div class="image-container">
+                    <p class="alt-text">
+                        Sample alt text
+                    </p>
+                </div>
+                <div class="text-container">
+                    <p id="content-text">Quantity: 1.</p>
+                    <p id="content-text">Total: n unit (money)</p>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <style>
+        #all-wrapper {
+            height: 100vh;
+            width: 100vw;
+            background-color: rgb(46, 46, 46);
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: auto;
+            margin-bottom: auto;
+
+            animation: 400ms cubic-bezier(0.165, 0.84, 0.44, 1) containerFadeIn backwards 0.5s;
+        }
+
+        .title-wrapper {
+            animation: 300ms linear fadeInChild 0.6s backwards;
+            color: #ffffff;
+            background-color: rgb(61, 61, 61);
+            padding-top: 25px;
+            padding-bottom: 20px;
+            padding-left: 15px;
+        }
+        .store-content-wrapper {
+            color: #aaaaaa;
+            animation: 800ms cubic-bezier(0.175, 0.885, 0.32, 1) fadeInChildContent 0.9s backwards;
+            padding-left: 16px;
+            padding-right: 16px;
+            padding-top: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .Titles {
+            font-size: 26px;
+            color: #cccccc;
+            padding-bottom: 20px;
+        }
+        .image-container {
+            width: calc(16px * 20);
+            height: calc(9px * 20);
+            background-color: #777777;
+            border-radius: 16px;
+            padding: 0px;
+        }
+
+
+
+
+        body {
+            background-color: rgb(29, 29, 29);
+            font-family: Arial Rounded MT;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+        }
+
+
+        @keyframes containerFadeIn {
+            0% {
+                height: 30px;
+                width: 80px;
+                border-radius: 30px;
+                background-color: rgb(161, 161, 161);
+                opacity: 0.8;
+            }
+            10% {
+                opacity: 1;
+            }
+            60% {
+                border-radius: 30px;
+            }
+            100% {
+                width: calc(100vw - 13px);
+                border-radius: 0px;
+            }
+        }
+
+        @keyframes fadeInChild {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        @keyframes fadeInChildContent {
+            0% {
+                opacity: 0;
+                transform: translateY(80px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+    </style>
+</html>

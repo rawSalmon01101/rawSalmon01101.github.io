@@ -1,15 +1,15 @@
 <!DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <div class="spinnyWheelWrapper">
+        <div class="spinnyThing"></div>
+        Loading...
+    </div>
     <body bgcolor=#000000>
-        <div class="spinnyWheelWrapper">
-            <div class="spinnyThing"></div>
-            Loading...
-        </div>
         <div class="scroll-wrapper-wrapper">
             <div class="scroll-container">Raju</div>
         </div>
         <div class="scroll-wrapper-wrapper">
-            <div class="scroll-container" id="wrapper2">Gng jngr</div>
+            <div class="scroll-container" id="wrapper2">12354</div>
         </div>
 
         <br>
@@ -76,11 +76,12 @@
             border: 0px solid black;
             border-radius: 30px;
             background-color: rgb(0, 185, 124);
-            transition: all 200ms cubic-bezier(0.23, 1, 0.320, 1);
+            transition: all 200ms cubic-bezier(0.23, 1, 0.320, 1.7);
+            width: fit-content;
         }
         .button:focus {
             transform: scale(0.96);
-            transition: all 200ms cubic-bezier(0.23, 1, 0.320, 1);
+            transition: all 200ms cubic-bezier(0.23, 1, 0.320, 3.2);
         }
 
         .customise {
@@ -145,10 +146,20 @@
         }
         @keyframes noHeight {
             0% {}
-            100% { height: 0px; opacity: 0; transform: translateY(-80px)}
+            100% { opacity: 0; transform: translateY(-80px); height: 0px;}
+        }
+        @keyframes actuallyNoHeight {
+            0% {}
+            100% {height: 0px;}
+        }
+        @keyframes moveUp {
+            0% {}
+            99% {transform: translateY(-80px);}
+            100% {transform: translateY(-60px);}
         }
 
         body {
+            animation: 200ms moveUp cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards 0.67s;
             overflow-x: hidden;
             font-family: Arial;
             display: flex;
@@ -159,19 +170,28 @@
             color: #dddddd;
         }
         .spinnyThing {
-            
             animation: 700ms linear infinite rotate;
             clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%, 50% 50%);
-            height: 60px;
-            width: 60px;
+            height: 20px;
+            width: 20px;
             background-color: #ffffff00;
             border-radius: 100%;
-            border: 6px solid rgb(0, 177, 118);
+            border: 3px solid rgb(0, 177, 118);
         }
         .spinnyWheelWrapper {
             color: #dddddd;
-            animation-delay: 4s;
-            animation: 800ms cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards noHeight;
+            overflow: hidden;
+            animation: 800ms cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards noHeight 0.8s;
+            color: rgb(0, 177, 118);
+            font-family: SF Pro Rounded;
+            font-size: 24px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 16px;
+            align-self: center;
+            margin-bottom: 26px;
+            margin-top: 26px;
         }
     </style>
 </html>
