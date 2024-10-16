@@ -1,0 +1,315 @@
+<html class="something">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <div class="toolbar">
+        <img src="arrow_left.svg" alt="Left arrow" width="24" height="24" class="arrowback">
+            Settings
+    </div>
+    <body>
+    <div class="all-wrapper">
+        <div class="outer-wrapper">
+            <div class="option">
+                <div class="single-option">
+                    <div class="text">
+                        Ring duration
+                            <p class="subtext"></p>
+                    </div>
+                </div>
+                <div class="single-option">
+                    <div class="text">
+                        Stop alarm with
+                            <p class="subtext"></p>
+                    </div>
+                </div>
+                <div class="single-option" id="lastoption">
+                    <div class="text">
+                        Notify before ringing
+                        <p class="subtext">
+                            Get a notification 15 minutes before an alarm goes off so you have a chance to turn it off before it rings.
+                        </p>
+                    </div>
+                    <div class="progress">
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <p class="ticker">Date & time</p>
+        <div class="outer-wrapper">
+            <div class="option">
+                <div class="single-option" id="lastoption">
+                    <div class="text">
+                        Date & time
+                        <p class="subtext">
+                            System time and dual clock widget
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <p class="ticker">Others</p>
+        <div class="outer-wrapper">
+            <div class="option">
+                <div class="single-option">
+                    <div class="text">
+                        Version
+                        <p class="subtext">
+                            14.0.05_expt_dynamic
+                        </p>
+                    </div>
+                </div>
+                <div class="single-option">
+                    <div class="text">
+                        About Clock
+                        <p class="subtext">
+                        </p>
+                    </div>
+                </div>
+                <div class="single-option" id="lastoption">
+                    <div class="text">
+                        Privacy
+                        <p class="subtext">
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+    <p class="googoo">googoo gaagaa i want milk</p>
+</html>
+<style>
+    .progress {
+        animation: 200ms linear bgcolor forwards;
+        animation-delay: 300ms;
+        width: 50px;
+        height: 30px;
+        background-color: #bababa;
+        border-radius: 30px;
+        margin-top: auto;
+        margin-bottom: 11%;
+        margin-left: auto;
+    }
+    .toggle {
+        width: 25px;
+        height: 25px;
+        background-color: #ffffff;
+        margin-top: 0px;
+        margin-left: 2.4px;
+        border-radius: 30px;
+        transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1);
+        box-shadow: 3px 5px 3px rgba(0, 0, 0, 0.138);
+    }
+    
+    input {
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    .toggle:only-child {
+        animation: 500ms enable cubic-bezier(0.39, 0.575, 0.565, 1) forwards 1;
+    }
+
+    .single-option {
+        font-family: Roboto;
+        font-weight:500;
+        font-size: 19.7px;
+        display: flex;
+        flex-direction: row;
+        align-items: end;
+        width: 340px;
+        gap: auto;
+        border-bottom: 0.5px solid rgba(0, 0, 0, 0.049);
+        padding: 20px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 15px;
+        padding-bottom: 0px;
+        transition: all 100ms linear;
+    }
+    .text {
+        margin-top: auto;
+        margin-bottom: auto;
+        width: 280px;
+        color: #000000;
+    }
+    .subtext {
+        font-weight: 450;
+        color: rgba(0, 0, 0, 0.393);
+        margin-top: 5px;
+        font-size: 17px;
+    }
+    .option {
+        background-color: #ffffff00;
+        border-radius: 18px;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        
+        padding-top: 10px;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    #lastoption {
+        border: none;
+    }
+
+    .outer-wrapper {
+        padding-left: 20px;
+        padding-right: 20px;
+        background-color: #ffffff;
+        width: fit-content;
+        border-radius: 18px;
+        box-shadow: 0px 25px 30px rgba(0, 0, 0, 0.024);
+        margin-left: auto;
+        margin-right: auto;
+        transition: all 200ms ease-out;
+    }
+    .outer-wrapper:hover {
+        background-color: #eaeaea;
+        transition: all 200ms ease-out;
+    }
+    .all-wrapper {
+        width: fit-content;
+        height: fit-content;
+    }
+    .ticker {
+        padding-left: 5px;
+        margin-top: 15px;
+        margin-bottom: -8px;
+    }
+
+    .toolbar {
+        background-color: #ffffff00;
+        width: 100%;
+        height: 70px;
+        font-weight: 400;
+        font-size: 24px;
+        color: #000000;
+        padding-left: 3px;
+        margin-top: -50px;
+        margin-bottom: -30px;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        position: sticky;
+    }
+    .arrowback {
+        margin-top: 4;
+    }
+
+    /*@keyframes enable {
+        0% {
+            width: 25px;
+            height: 25px;
+            margin-left: 2.4px;
+            border-radius: 30px;
+            margin-right: 2.4px;
+        }
+        40% {
+            width: 40px;
+            height: 25px;
+            margin-left: 0px;
+            border-radius: 30px;
+            margin-right: auto;
+        }
+        55% {
+            width: 40px;
+            border-radius: 30px;
+            margin-left: 2.5px;
+            margin-right: 2.4px;
+        }
+        100% {
+            margin-left: auto;
+            margin-right: 2.4px;
+        }
+    }
+    @keyframes bgcolor {
+        from {
+            background-color: #bababa;
+        }
+        to {
+            background-color: #0088ff;
+        }
+    }*/
+
+    body {
+        background-color: #f5f5f5;
+        font-size: 14px;
+        font-family: Roboto;
+        font-weight: 500;
+        color: #0000005c;
+        transform: scale(0.85);
+        margin-left: 0px;
+        width: fit-content;
+        overflow-x: hidden;
+        margin-left: -10px;
+    }
+
+
+
+
+
+
+
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 30px;
+    }
+
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #bababa;
+        transition: 200ms cubic-bezier(0.39, 0.575, 0.565, 1);
+        border-radius: 30px;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 20px;
+        width: 20px;
+        left: 2.5px;
+        bottom: 5px;
+        background-color: white;
+        transition: 200ms cubic-bezier(0.41, 0.97, 0.31, 0.66);
+        border-radius: 50%;
+    }
+
+    input:checked + .slider {
+        background-color: #0088ff;
+    }
+
+    input:checked + .slider:before {
+        transform: translateX(24px);
+    }
+
+
+
+
+
+
+
+    .googoo {
+        color: #00000006;
+    }
+</style>
