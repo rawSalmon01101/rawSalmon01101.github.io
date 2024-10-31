@@ -12,8 +12,23 @@
             Ligma Intelligence
         </p>
     </h2>
-    <div class="bar-wrapper">
-        <input type="text" class="box" placeholder="Start a new conversation">
+
+    <div class="chat-viewport">
+        <div class="sender">
+            <p class="texting">
+                This is an example conversation.
+            </p>
+        </div>
+        <div class="chatbot">
+            <p class="texting">
+                This is an example conversation.
+            </p>
+        </div>
+    </div>
+    <div class="bar-wrapper-wrapper">
+        <div class="bar-wrapper">
+            <input type="text" class="box" placeholder="Start a new conversation">
+        </div>
         <button type="button" class="send-button">Send</button>
     </div>
     <p class="disclaimer">
@@ -34,21 +49,16 @@
         padding-bottom: 10px;
         padding-right: 10px;
         gap: 15px;
-        margin-top: calc(100vh - 250px);
+        /*margin-top: calc(100vh - 250px);*/
         width: 90%;
         margin-left: auto;
         margin-right: auto;
+        height: 30px;
     }
     .bar-wrapper:focus-within {
         transition: all 200ms cubic-bezier(0.175, 0.885, 0.32, 1);
         background-color: #363636;
-        /*box-shadow: 0px 4px 40px 10px #64008b;*/
-        /*animation: 3s shadowAnim linear infinite;*/
-        box-sizing: border-box;
-        border: 2px solid gray;
-        padding-top: 8px;
-        padding-bottom: 8px;
-        width: 98%;
+
     }
     .box {
         margin-left: auto;
@@ -70,7 +80,6 @@
     }
     .send-button {
         font-size: 14px;
-        padding: 12px;
         width: fit-content;
         background-color: rgb(173, 107, 0);
         border-radius: 60px;
@@ -79,6 +88,8 @@
         border: 0px solid black;
         font-family: "Space Grotesk", sans-serif;
         font-optical-sizing: auto;
+        padding-left: 15px;
+        padding-right: 15px;
     }
     .send-button:hover {
         transform: scale(1.05);
@@ -134,6 +145,76 @@
         text-align: center;
     }
 
+    .bar-wrapper-wrapper {
+        display: flex;
+        gap: 10px;
+        width: calc(100vw - 30px);
+        margin-left: auto;
+        margin-right: auto;
+        position: sticky;
+    }
+
+
+
+    .chat-viewport {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 30px;
+        width: calc(100vw - 50px);
+        margin-left: auto;
+        margin-right: auto;
+        height: calc(100% - 290px);
+        overflow-y: scroll;
+        overflow-x: hidden;
+        scroll-snap-type: proximity;
+        clip-path: fill-box;
+        animation: 600ms cubic-bezier(0.14, 0.58, 0.4, 0.98) chatLoad backwards;
+        animation-delay: 900ms;
+    }
+
+
+
+    .sender {
+        width: fit-content;
+        border-radius: 24px;
+        border-bottom-right-radius: 4px;
+        background-color: rgb(160, 98, 0);
+        padding: 12px;
+        color: #ffffff;
+        margin-left: auto;
+        max-width: calc(100% - 60px);
+        margin-right: 5px;
+    }
+    .chatbot {
+        width: fit-content;
+        border-radius: 24px;
+        border-bottom-left-radius: 4px;
+        background-color: rgb(42, 42, 42);
+        padding: 12px;
+        color: #dddddd;
+        margin-right: auto;
+        max-width: calc(100% - 60px);
+        margin-left: 5px;
+    }
+
+    .texting {
+        margin: 0;
+        overflow-wrap: break-word;
+    }
+
+
+    
+    .chat-viewport::-webkit-scrollbar {
+        width: 3px;
+    }
+    .chat-viewport::-webkit-scrollbar-thumb {
+        background: #bbbbbb;
+        border-radius: 10px;
+    }
+
+
+
     @keyframes shadowAnim {
         0% {
             box-shadow: 0px 4px 40px 10px rgb(192, 0, 121);
@@ -188,6 +269,51 @@
             letter-spacing: 0px;
         }
     }
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    @keyframes fadeInScaleIn {
+        from {
+            opacity: 0;
+            transform: scale(0.9);
+            width: 600px;
+            transform: translateY(50px);
+        }
+        50% {
+            transform: translateY(2px);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+            width: 700px;
+        }
+    }
+    @keyframes tooltip {
+        0% {
+            opacity: 0;
+            transform: translateY(60px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+
+    @keyframes chatLoad {
+        from {
+            opacity: 0;
+            transform: scale(0.96);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
 
     @media only screen and (prefers-color-scheme:light)
     {
@@ -234,13 +360,22 @@
             transform: scale(0.9);
             margin-top: 15px;
             transition: all 800ms cubic-bezier(0.16, 0.82, 0.06, 0.94);
+            animation: 700ms cubic-bezier(0.3, 0.99, 0.2, 0.76) fadeIn backwards;
+            animation-delay: 400ms
         }
         .bar-wrapper {
             width: 700px;
-            margin-top: calc(100vh - 200px);
+            /*margin-top: calc(100vh - 200px);*/
+            animation-delay: 300ms;
+            margin-left: 0;
+            margin-right: 0;
         }
         .bar-wrapper:focus-within {
             width: 730px;
+        }
+        .head {
+            animation: 900ms cubic-bezier(0.16, 0.91, 0.32, 0.98) textLoad backwards;
+            animation-delay: 500ms;
         }
         .logo {
             width: 30px;
@@ -259,7 +394,26 @@
             transform: scale(0.96);
             background-color: indianred;
         }
+        .all-wrapper {
+            animation: none;
+            opacity: 1;
+        }
+        .disclaimer {
+            animation: 500ms cubic-bezier(0.3, 0.7, 0.32, 0.98) tooltip backwards;
+            animation-delay: 500ms;
+        }
+        .bar-wrapper-wrapper {
+            margin-left: auto;
+            margin-right: auto;
+            width: 700px;
+            animation: 600ms cubic-bezier(0.37, 0.66, 0.36, 0.97) fadeInScaleIn backwards;
+            animation-delay: 300ms;
+        }
 
+        .chat-viewport {
+            height: calc(100% - 230px);
+            width: 600px;
+        }
         @media only screen and (prefers-color-scheme: light)
         {
             .hero-title {
@@ -268,4 +422,3 @@
         }
     }
 </style>
-
