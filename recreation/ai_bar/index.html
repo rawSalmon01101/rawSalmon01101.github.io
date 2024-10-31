@@ -35,6 +35,9 @@
         padding-right: 10px;
         gap: 15px;
         margin-top: calc(100vh - 250px);
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
     }
     .bar-wrapper:focus-within {
         transition: all 200ms cubic-bezier(0.175, 0.885, 0.32, 1);
@@ -45,6 +48,7 @@
         border: 2px solid gray;
         padding-top: 8px;
         padding-bottom: 8px;
+        width: 98%;
     }
     .box {
         margin-left: auto;
@@ -120,6 +124,7 @@
     .head {
         font-family: "Space Grotesk", sans-serif;
         font-optical-sizing: auto;
+        animation: 1400ms textLoad cubic-bezier(0.23, 1, 0.320, 1) forwards;
     }
     .disclaimer {
         color: rgba(255, 255, 255, 0.719);
@@ -175,6 +180,14 @@
             opacity: 1;
         }
     }
+    @keyframes textLoad {
+        from {
+            letter-spacing: 5px;
+        }
+        to {
+            letter-spacing: 0px;
+        }
+    }
 
     @media only screen and (prefers-color-scheme:light)
     {
@@ -208,6 +221,50 @@
         }
         .disclaimer {
             color: #555555;
+        }
+    }
+    @media only screen and (min-width: 800px)
+    {
+        .hero-title {
+            background-color: #262626;
+            margin-left: 0px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-radius: 12px;
+            transform: scale(0.9);
+            margin-top: 15px;
+            transition: all 800ms cubic-bezier(0.16, 0.82, 0.06, 0.94);
+        }
+        .bar-wrapper {
+            width: 700px;
+            margin-top: calc(100vh - 200px);
+        }
+        .bar-wrapper:focus-within {
+            width: 730px;
+        }
+        .logo {
+            width: 30px;
+            height: 30px;
+            transition: all 600ms cubic-bezier(0.215, 0.610, 0.355, 1);
+        }
+        .logo:hover {
+            filter: brightness(0.8);
+            width: 20px;
+            height: 20px;
+            margin-left: 5px;
+            margin-right: 5px;
+            transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1);
+        }
+        .send-button:focus {
+            transform: scale(0.96);
+            background-color: indianred;
+        }
+
+        @media only screen and (prefers-color-scheme: light)
+        {
+            .hero-title {
+                background-color: #dddddd;
+            }
         }
     }
 </style>
