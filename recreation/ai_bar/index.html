@@ -1,4 +1,6 @@
 <head>
+    <title>Ligma Intelligence</title>
+    <link rel="icon" href="logo.png" type="logo.png">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Space+Grotesk:wght@300..700&display=swap');
@@ -14,20 +16,10 @@
     </h2>
 
     <div class="chat-viewport">
-        <div class="sender">
-            <p class="texting">
-                This is an example conversation.
-            </p>
-        </div>
-        <div class="chatbot">
-            <p class="texting">
-                This is an example conversation.
-            </p>
-        </div>
     </div>
     <div class="bar-wrapper-wrapper">
         <div class="bar-wrapper">
-            <input type="text" class="box" placeholder="Start a new conversation">
+            <input type="text" class="box" placeholder="Type here">
         </div>
         <button type="button" class="send-button">Send</button>
     </div>
@@ -186,6 +178,7 @@ font-family: "Space Grotesk", sans-serif;
         margin-left: auto;
         max-width: calc(100% - 60px);
         margin-right: 5px;
+        animation: 300ms cubic-bezier(0.33, 0.97, 0.4, 0.91) bubble backwards;
     }
     .chatbot {
         width: fit-content;
@@ -197,6 +190,7 @@ font-family: "Space Grotesk", sans-serif;
         margin-right: auto;
         max-width: calc(100% - 60px);
         margin-left: 5px;
+        animation: 300ms cubic-bezier(0.33, 0.97, 0.4, 0.91) bubble backwards;
     }
 
     .texting {
@@ -315,6 +309,18 @@ font-family: "Space Grotesk", sans-serif;
             transform: scale(1);
         }
     }
+    @keyframes bubble {
+        from {
+            opaciy: 0;
+            transform: translateY(50px);
+            filter: blur(7px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0px);
+            filter: none;
+        }
+    }
 
     @media only screen and (prefers-color-scheme:light)
     {
@@ -423,3 +429,4 @@ font-family: "Space Grotesk", sans-serif;
         }
     }
 </style>
+<script src="script.js"></script>
