@@ -26,16 +26,18 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Function to add a message to the chat viewport
     function addMessageToChat(type, messageText) {
         const newMessageDiv = document.createElement("div");
         newMessageDiv.classList.add(type === "user" ? "sender" : "chatbot");
-
+    
         const newMessage = document.createElement("p");
         newMessage.classList.add("texting");
         newMessage.textContent = messageText;
-
+    
         newMessageDiv.appendChild(newMessage);
         chatViewport.appendChild(newMessageDiv);
+    
+        // Auto-scroll to the bottom
+        chatViewport.scrollTop = chatViewport.scrollHeight;
     }
 });
