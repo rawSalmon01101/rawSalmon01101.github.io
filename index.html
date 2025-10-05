@@ -120,6 +120,8 @@
 
         html {
             scroll-behavior: smooth;
+            overflow-y: visible;
+            overflow-x: visible;
         }
 
         .construction {
@@ -542,6 +544,11 @@
                 font-size: 15px;
                 margin-top: 0px;
             }
+            .ach-card {
+                background-color: #00000000;
+                border-radius: 0px;
+                border-left: 1px solid gray;
+            }
         }
         @media only screen and (max-width: 340px) {
             .toolbar-wrapper {
@@ -649,6 +656,13 @@
         {
             .construction {
                 filter:invert();
+            }
+            .ach-card {
+                border-radius: 0px;
+                border: none;
+                border-left: 1px solid grey;
+                background-color: rgba(255, 255, 255, 0);
+                box-shadow: none;
             }
         }
 
