@@ -9,6 +9,7 @@
         <div class="toolbar-child" id="middle"><a href="#plans" class="tab">PLANS</a></div>
         <div class="toolbar-child" id="edge-end"><a href="#achievements" class="tab">ACHIEVEMENT</a></div>
     </div>
+
     <body bgcolor="black" text="black">
         <div id="headingTop">Hello there.</div>
         <br>
@@ -115,6 +116,13 @@
                                    Role: Ex- UI/UX Designer.
                 </p>
             </div>
+        </div>
+
+        <div class="bottomToolbar">
+            <input type="button" value="OPEN DEVLOGS " class="RedirectButtons">
+            <a href="mailto:diarmaitlmao@outlook.com">
+                <input type="button" value="MAIL ME" class="RedirectButtons">
+            </a>
         </div>
     </body>
 
@@ -279,6 +287,30 @@
             50% { transform: scale(0); }
             70% { opacity: 1;}
             100% { transform: scale(1); opacity: 1; height: fit-content; }
+        }
+        @keyframes popFromBottom
+        {
+            from
+            {
+                opacity: 0;
+                transform: translateY(80px);
+            }
+            30%
+            {
+                opacity: 1;
+            }
+            50%
+            {
+                width: 400px;
+                transform: translateY(80px);
+                gap: 20px;
+            }
+            to
+            {
+                width: fit-content;
+                transform: translateY(0px);
+                gap: 4px;
+            }
         }
 
 
@@ -463,6 +495,66 @@
             margin-top: -15px;
         }
 
+        .bottomToolbar
+        {
+            position: sticky;
+            bottom: 0;
+            top: calc(100% - 60px);
+            z-index: 999999;
+
+            width: fit-content;
+            display: flex;
+            flex-direction: row;
+            gap: 4px;
+
+            background-color: rgb(43, 43, 43);
+            padding: 4px;
+            border: 1px solid #747474;
+
+            margin-left: auto;
+            margin-right: auto;
+
+            transform: translateY(-8px);
+
+            transition: all 300ms cubic-bezier(0.18, 0.76, 0.33, 0.96);
+
+            animation: backwards 700ms popFromBottom cubic-bezier(0.15, 0.81, 0.38, 1.3);
+            animation-delay: 500ms;
+
+            height: 35px;
+        }
+        .bottomToolbar:hover
+        {
+            box-shadow: 0px 0px 50px 20px rgba(255, 255, 255, 0.24);
+        }
+        .RedirectButtons
+        {
+            padding: 10px;
+
+            padding-left: 12px;
+            padding-right: 12px;
+
+            border: 0px solid #000000;
+            border-radius: 0px;
+            background-color: #525252;
+            color: #ffffff;
+
+            font-size: 12px;
+            font-family: 'Noto Sans', sans-serif;
+            font-style: normal;
+            font-optical-sizing: auto;
+            font-variation-settings: "wdth" 100;
+
+            transition: all 300ms cubic-bezier(0.18, 0.76, 0.33, 0.96);
+        }
+        .RedirectButtons:hover
+        {
+            padding-left: 40px;
+            padding-right: 40px;
+
+            transition: 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
         @media only screen and (min-width: 760px) {
             .cards {
                 width: 700px;
@@ -545,6 +637,14 @@
             #achievements {
                 border-radius: 0px;
             }
+
+            .bottomToolbar
+            {
+                margin-left: auto;
+                margin-right: 0;
+
+                transition: all 300ms cubic-bezier(0.18, 0.76, 0.33, 0.96);
+            }
         }
         @media only screen and (max-width: 458px) {
             .toolbar-wrapper {
@@ -590,6 +690,31 @@
                 background-color: #00000000;
                 border-radius: 0px;
                 border-left: 1px solid gray;
+            }
+
+            .bottomToolbar
+            {
+                position: fixed;
+                width: calc(100% - 12px);
+                top: calc(100% - 42px);
+
+                border: 0px solid #000000;
+                background-color: #000000;
+
+                transform: translateY(-2px) translateX(-8px);
+                height: fit-content;
+
+                display: flex;
+                flex-direction: row;
+
+                transition: all 300ms cubic-bezier(0.18, 0.76, 0.33, 0.96);
+            }
+            .RedirectButtons
+            {
+                width: 300px;
+                transition: all 300ms cubic-bezier(0.18, 0.76, 0.33, 0.96);
+
+                padding: 6px;
             }
         }
         @media only screen and (max-width: 340px) {
